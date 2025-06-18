@@ -1,0 +1,140 @@
+/* Custom utility for subtle text shadow, useful for Neumorphism */
+.neumorph-text-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), -1px -1px 2px rgba(255, 255, 255, 0.05);
+}
+
+/* Styles for the animated aurora-overlay */
+.aurora-overlay {
+  background: linear-gradient(
+    -45deg,
+    #a855f7, /* purple-500 */
+    #8b5cf6, /* violet-500 */
+    #ec4899, /* pink-500 */
+    #6366f1  /* indigo-500 */
+  );
+  background-size: 400% 400%; /* Make the background larger than the div to allow animation */
+  animation: gradient-animation 15s ease infinite; /* Apply the animation */
+  filter: blur(100px) opacity(0.4); /* Apply a strong blur and lower opacity for an ethereal, aurora-like effect */
+  /* Puedes añadir un backdrop-filter si quieres un efecto Glassmorphism en el contenido que esté por encima */
+  /* backdrop-filter: blur(10px); */
+}
+
+/* Keyframes for the gradient animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animations for decorative elements (circles and lines in Home section) */
+@keyframes pulse-slow-1 {
+  0%, 100% { transform: scale(1); opacity: 0.1; }
+  50% { transform: scale(1.1); opacity: 0.2; }
+}
+
+@keyframes pulse-slow-2 {
+  0%, 100% { transform: scale(1); opacity: 0.1; }
+  50% { transform: scale(1.15); opacity: 0.25; }
+}
+
+@keyframes move-line-1 {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(50deg) translateY(10px); }
+}
+
+@keyframes move-line-2 {
+  0%, 100% { transform: rotate(-45deg) translateY(0); }
+  50% { transform: rotate(-50deg) translateY(-10px); }
+}
+
+/* Fade-in animations for section content */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.8s ease-out forwards;
+  animation-delay: 0.2s; /* Delay for staggered effect */
+}
+
+/* Estas son las clases de Neumorfismo que asumo que ya tienes o que debes añadir */
+/* Si no las tienes, aquí tienes un ejemplo básico para el modo oscuro, ajústalas a tu tema */
+/* Neumorphism Base Styles - Dark Mode Example */
+.neumorph-raised {
+  background-color: #1a202c; /* Equivalent to gray-900 */
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.4), -7px -7px 15px rgba(50, 50, 50, 0.1);
+}
+
+.neumorph-pressed {
+  background-color: #151a23; /* Slightly darker than raised */
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.3), inset -5px -5px 10px rgba(50, 50, 50, 0.08);
+}
+
+.neumorph-flat-soft {
+  background-color: #1a202c; /* Same as raised */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(50, 50, 50, 0.05);
+}
+
+.neumorph-button {
+  /* Inherits neumorph-raised styles and adds button specific properties */
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.neumorph-button:hover {
+  /* Hover effect for buttons, could be neumorph-pressed or slight scale */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 9px 9px 20px rgba(0, 0, 0, 0.5), -9px -9px 20px rgba(60, 60, 60, 0.15);
+}
+
+.neumorph-button:active {
+  /* Active state for buttons, simulates pressing */
+  transform: translateY(0);
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.4), inset -5px -5px 10px rgba(60, 60, 60, 0.1);
+}
+
+/* Card image specific neumorphism */
+.neumorph-card-image {
+  background-color: #1a202c;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(60, 60, 60, 0.1);
+  border-radius: 9999px; /* For full circle */
+}
+
+.neumorph-icon-pop {
+  animation: iconPop 0.3s ease-out forwards;
+}
+
+@keyframes iconPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1.25); }
+}
