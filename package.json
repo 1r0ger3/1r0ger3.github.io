@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "description": "Online portfolio by Roger Munevar",
+  "homepage": "https://1r0ger3.github.io/1r0ger3",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
@@ -25,7 +28,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.5",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "gh-pages": "^6.1.1"
   },
   "browserslist": {
     "production": [
